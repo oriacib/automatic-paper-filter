@@ -216,6 +216,9 @@ powershell -ExecutionPolicy Bypass -File scripts/install_task_windows.ps1 `
   -PythonExe "C:\path\to\your\python.exe"
 ```
 
+安装脚本已采用更安全默认值：`RunLevel=Limited`、`RestartCount=3`、`RestartIntervalMinutes=5`。
+仅在确有需要时再提升权限（`-RunLevel Highest`）。
+
 若使用 `-TriggerMode Startup` 且主体为 `SYSTEM`，通常看不到桌面弹窗。
 安装后建议立即验证：
 

@@ -210,6 +210,9 @@ powershell -ExecutionPolicy Bypass -File scripts/install_task_windows.ps1 `
   -PythonExe "C:\path\to\your\python.exe"
 ```
 
+The installer now defaults to safer settings: `RunLevel=Limited`, `RestartCount=3`, `RestartIntervalMinutes=5`.
+Only use higher privilege if you explicitly need it (`-RunLevel Highest`).
+
 If you install with `-TriggerMode Startup` and `SYSTEM`, popups are usually not visible on desktop.
 Validate task registration and trigger once:
 
