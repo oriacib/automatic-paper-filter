@@ -1,0 +1,9 @@
+name: paper-watcher
+channels:
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - requests>=2.32.0
+      - PyYAML>=6.0.1

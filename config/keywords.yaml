@@ -1,0 +1,184 @@
+title_multiplier: 2.0
+summary_multiplier: 1.0
+
+level_weights:
+  must: 3.0
+  strong: 1.8
+  weak: 0.9
+  exclude: 2.4
+
+category_weights:
+  core_keywords: 1.6
+  method_keywords: 1.2
+  property_keywords: 1.0
+  exclude_keywords: 1.0
+  flat: 1.0
+
+
+core_keywords:
+
+  must:
+    - "text-to-3d"
+    - "text guided 3d generation"
+    - "text conditioned 3d generation"
+    - "text-to-4d"
+    - "4d generation"
+    - "4d scene generation"
+    - "4d gaussian splatting"
+    - "dynamic 3d generation"
+    - "spatiotemporal 3d generation"
+    - "layout-to-video"
+    - "layout-to-image"
+    - "3d multimodal"
+    - "multimodal 3d generation"
+    - "rare concept generation"
+    - "long tail concept generation"
+    - "physics aware generation"
+
+  strong:
+    - "3d generation"
+    - "dynamic scene generation"
+    - "novel view synthesis"
+    - "3d reconstruction"
+    - "dynamic scene reconstruction"
+    - "3d scene generation"
+    - "3d object generation"
+    - "4d content generation"
+    - "spatiotemporal generation"
+    - "scene graph to image"
+    - "scene graph to video"
+    - "structured scene generation"
+    - "object centric generation"
+    - "compositional generation"
+    - "compositional concept generation"
+    - "fine grained concept generation"
+    - "open vocabulary concept generation"
+    - "3d vision language model"
+    - "3d vlm"
+    - "3d mllm"
+    - "3d language alignment"
+    - "3d grounding"
+    - "spatial reasoning"
+    - "world model"
+    - "generative world model"
+
+  weak:
+    - "point cloud"
+    - "mesh generation"
+    - "implicit 3d representation"
+    - "radiance field"
+    - "triplane representation"
+    - "scene layout generation"
+    - "object placement generation"
+    - "scene composition"
+    - "multi entity generation"
+    - "prompt fidelity"
+    - "semantic faithfulness"
+    - "concept binding"
+    - "relation binding"
+    - "spatial intelligence"
+
+
+
+method_keywords:
+
+  strong:
+    - "diffusion"
+    - "score distillation"
+    - "score distillation sampling"
+    - "sds"
+    - "variational score distillation"
+    - "vsd"
+    - "gaussian splatting"
+    - "neural rendering"
+    - "nerf"
+    - "dynamic nerf"
+    - "diffusion transformer"
+    - "dit"
+    - "mmdit"
+    - "flow matching"
+    - "rectified flow"
+    - "consistency model"
+    - "consistency distillation"
+    - "classifier free guidance"
+    - "cfg"
+
+  weak:
+    - "latent diffusion"
+    - "video diffusion"
+    - "spatiotemporal diffusion"
+    - "autoregressive diffusion"
+    - "tokenized video generation"
+    - "visual tokenizer"
+    - "video tokenizer"
+    - "representation autoencoder"
+    - "vae"
+    - "sdf"
+    - "implicit surface"
+    - "deformation field"
+    - "motion field"
+    - "scene flow"
+    - "temporal attention"
+    - "3d attention"
+    - "cross attention"
+    - "sparse attention"
+    - "memory efficient diffusion"
+
+
+
+property_keywords:
+
+  strong:
+    - "real-time"
+    - "controllable"
+    - "temporal consistency"
+    - "motion consistency"
+    - "cross view consistency"
+    - "geometry consistency"
+    - "high fidelity"
+    - "view consistent"
+    - "temporal coherence"
+    - "physics informed"
+    - "physics guided"
+    - "physical plausibility"
+    - "physics consistent"
+    - "object interaction"
+    - "dynamics aware"
+    - "causal dynamics"
+
+  weak:
+    - "memory efficient"
+    - "few-shot"
+    - "one-shot"
+    - "benchmark"
+    - "evaluation"
+    - "long horizon generation"
+    - "multi view consistency"
+    - "long video generation"
+    - "high resolution generation"
+    - "scalable generation"
+    - "identity consistent"
+    - "subject consistent"
+    - "fine grained control"
+
+
+
+exclude_keywords:
+
+  exclude:
+    - "medical imaging"
+    - "medical segmentation"
+    - "radiology"
+    - "protein"
+    - "genomics"
+    - "drug discovery"
+    - "molecule generation"
+    - "astronomy"
+    - "remote sensing"
+    - "hyperspectral"
+    - "speech recognition"
+    - "audio separation"
+    - "document layout analysis"
+    - "recommendation system"
+    - "financial forecasting"
+    - "tabular learning"

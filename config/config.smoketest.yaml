@@ -1,0 +1,72 @@
+﻿github:
+  owner: "oriacib"
+  repo: "daily-arXiv-ai-enhanced"
+  branch: "main"
+  # Target in this repo is data/YYYY-MM-DD.md
+  path_template: "data/{date}.md"
+  # Optional. If set, it has higher priority than owner/repo/branch/path_template.
+  # raw_url_template: "https://raw.githubusercontent.com/{owner}/{repo}/{branch}/data/{date}.md"
+  raw_url_template: null
+  # Optional GitHub token for higher API rate limit (or set env GITHUB_TOKEN).
+  token: ""
+  timeout_seconds: 20
+
+sync:
+  # Used only when manually passing a date range.
+  lookback_days: 2
+  # If false, skipped dates that already have metadata.json will not be reprocessed.
+  reprocess_existing: true
+  max_attempts: 5
+  base_delay_seconds: 1
+  max_delay_seconds: 30
+
+relevance:
+  high_threshold: 0.99
+  medium_threshold: 0.45
+  keyword_weight: 0.6
+  llm_weight: 0.4
+  # all | ambiguous | off
+  llm_mode: "off"
+  llm_trigger_low: 0.25
+  llm_trigger_high: 0.75
+
+llm:
+  provider: "deepseek"
+  enabled: false
+  api_key: ""
+  model: ""
+  base_url: ""
+  api_format: ""
+  timeout_seconds: 20
+  max_attempts: 3
+  max_input_chars: 900
+
+deepseek:
+  enabled: false
+  api_key: ""
+  model: "deepseek-chat"
+  base_url: "https://api.deepseek.com"
+  timeout_seconds: 20
+  max_attempts: 3
+
+download:
+  max_attempts: 5
+  base_delay_seconds: 1
+  max_delay_seconds: 60
+  timeout_seconds: 60
+
+aggregate:
+  window_days: 7
+
+scheduler:
+  interval_seconds: 1800
+  network_check_url: "https://api.github.com"
+  max_backoff_seconds: 600
+
+log:
+  level: "INFO"
+  file: "data/logs/paper_watcher.log"
+
+notifications:
+  popup_enabled: false
+  popup_timeout_seconds: 5

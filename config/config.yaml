@@ -1,0 +1,82 @@
+github:
+  owner: "oriacib"
+  repo: "daily-arXiv-ai-enhanced"
+  branch: "main"
+  # Target in this repo is data/YYYY-MM-DD.md
+  path_template: "data/{date}.md"
+  # Optional. If set, it has higher priority than owner/repo/branch/path_template.
+  # raw_url_template: "https://raw.githubusercontent.com/{owner}/{repo}/{branch}/data/{date}.md"
+  raw_url_template: null
+  # Optional GitHub token for higher API rate limit (or set env GITHUB_TOKEN).
+  token: ""
+  timeout_seconds: 20
+
+sync:
+  # Initial window when no historical success exists.
+  lookback_days: 2
+  # If true, auto mode fetches only dates after last successful sync.
+  catch_up_from_last_success: true
+  # If false, skipped dates that already have metadata.json will not be reprocessed.
+  reprocess_existing: false
+  max_attempts: 5
+  base_delay_seconds: 1
+  max_delay_seconds: 30
+
+relevance:
+  high_threshold: 0.72
+  medium_threshold: 0.45
+  keyword_weight: 0.6
+  llm_weight: 0.4
+  # all | ambiguous | off
+  llm_mode: "ambiguous"
+  llm_trigger_low: 0.2
+  llm_trigger_high: 0.65
+  llm_max_calls_per_run: 30
+
+llm:
+  # provider: deepseek | kimi | qwen | gpt | gemini | openai_compatible | local
+  provider: "deepseek"
+  enabled: true
+  # For safety, prefer env var; keep empty here.
+  api_key: ""
+  # If empty, system picks provider default model.
+  model: ""
+  # If empty, system picks provider default base URL.
+  base_url: ""
+  # Optional override: openai_compatible | gemini
+  api_format: ""
+  timeout_seconds: 20
+  max_attempts: 3
+  # Max chars passed into LLM summary section.
+  max_input_chars: 900
+
+# Legacy compatibility section (still supported).
+deepseek:
+  enabled: true
+  api_key: ""
+  model: "deepseek-chat"
+  base_url: "https://api.deepseek.com"
+  timeout_seconds: 20
+  max_attempts: 3
+
+download:
+  max_attempts: 5
+  base_delay_seconds: 1
+  max_delay_seconds: 60
+  timeout_seconds: 60
+
+aggregate:
+  window_days: 7
+
+scheduler:
+  interval_seconds: 1800
+  network_check_url: "https://api.github.com"
+  max_backoff_seconds: 600
+
+log:
+  level: "INFO"
+  file: "data/logs/paper_watcher.log"
+
+notifications:
+  popup_enabled: true
+  popup_timeout_seconds: 8
